@@ -15,7 +15,7 @@ async def get_dict():
     return users
 
 @app.post("/user/{username}/{age}")
-async def post_users(user: User, username, age):
+async def post_users(user: User, username: str, age: int):
     user_id = len(users) + 1
     user = [user_id, username, age]
     users.append(user)
